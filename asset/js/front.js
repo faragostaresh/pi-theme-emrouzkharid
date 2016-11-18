@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     $(document).ready(function () {
         $('#pi-system .pi-zone-7 .owl-carousel').owlCarousel({
             margin: 3,
