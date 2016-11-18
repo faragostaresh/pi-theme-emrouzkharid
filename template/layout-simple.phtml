@@ -1,0 +1,111 @@
+<?php
+// Set doctype explicitly if it is not `HTML4_LOOSE`, i.e. 'HTML 4.01 Transitional'
+$this->doctype('HTML5');
+
+// Load translation data
+$this->i18nTheme();
+
+//HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+$this->js(array(
+    pi::url('static/js/html5shiv.js') => array(
+        'conditional' => 'lt IE 9'
+    ),
+    pi::url('static/js/respond.min.js') => array(
+        'conditional' => 'lt IE 9'
+    ),
+));
+
+// Load jQuery
+$this->jquery();
+
+// Load Bootstrap css/js and font-awesome
+$this->bootstrap(array(
+    'js/bootstrap.min.js',
+    'font-awesome/css/font-awesome.min.css'
+));
+
+// Load front.css
+$this->css($this->assetTheme('css/front.css'));
+
+// Load localization css
+$this->css($this->assetLocale('locale.css'));
+
+// Apple icons
+// Apple icon for iphone
+$this->headLink(array(
+    'rel'   => 'apple-touch-icon',
+    'href'  => $this->assetTheme('image/touch-icon-iphone.png')
+));
+// Apple icon for ipad
+$this->headLink(array(
+    'rel'   => 'apple-touch-icon',
+    'sizes' => '72x72',
+    'href'  => $this->assetTheme('image/touch-icon-ipad.png')
+));
+// Apple icon for iphone retina
+$this->headLink(array(
+    'rel'   => 'apple-touch-icon',
+    'sizes' => '114x114',
+    'href'  => $this->assetTheme('image/touch-icon-iphone-retina.png')
+));
+// Apple icon for ipad retina
+$this->headLink(array(
+    'rel'   => 'apple-touch-icon',
+    'sizes' => '114x114',
+    'href'  => $this->assetTheme('image/touch-icon-ipad-retina.png')
+));
+
+// Meta Viewport Tag
+$this->headMeta('width=device-width, initial-scale=1.0', 'viewport');
+
+// Explicitly load favicon
+$this->headLink(array(
+    'rel'   => 'shortcut icon',
+    'href'  => $this->favicon(),
+));
+
+// Load google analytics code
+$this->ga();
+
+// Get module name
+$module = Pi::service('module')->current();
+
+?>
+<!DOCTYPE HTML>
+<html lang="<?php echo $locale ?>">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body id="pi-<?php echo $module; ?>" class="pi-locale-<?php echo $locale; ?> pi-layout-simple">
+    <!-- Header: brand, slogan, user bar -->
+    <header class="pi-header">
+            <div class="container">
+                <h2>
+                    <a class="navbar-brand" href="<?php echo $this->url('home'); ?>" title="<?php echo _escape($slogan); ?>">
+                        <?php echo _escape($sitename); ?>
+                    </a>
+                </h2>
+            </div>
+    </header>
+    <!-- Page main content: flash-messenger,and module content -->
+    <section class="container pi-main-container">
+        <!-- Flash messenger -->
+        <?php include $this->template('flash-messenger'); ?>
+        <!-- Module content starts -->
+        <?php if (!empty($content)) { ?>
+            <div class="<?php echo $module; ?>">
+<br />
+                <div class="pi-module-content" ng-app="<?php echo $module; ?>">
+                    <?php echo $content; ?>
+                </div>
+<br />
+            </div>
+        <?php } ?>
+        <!-- Module content ends -->
+    </section>
+    <!-- Footer: sitelink -->
+    <footer class="pi-footer text-center">
+  
+    </footer>
+</body>
+</html>
