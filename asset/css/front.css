@@ -1095,57 +1095,63 @@ input, option, select {
 
 /* Customize */
 .pi-zone-7 .owl-carousel {
-    height: 323px !important;
+    height: 233px !important;
 }
 
 .pi-zone-7 .owl-carousel .owl-stage {
-    height: 320px !important;
+    height: 230px !important;
 }
 
 .pi-zone-7 .owl-carousel .owl-stage-outer {
-    height: 320px !important;
+    height: 230px !important;
 }
 
 .pi-zone-7 .owl-carousel .owl-item {
-    max-height: 320px !important;
+    max-height: 230px !important;
 }
 
-.pi-zone-7 .owl-carousel .owl-item img {
-    max-height: 320px !important;
-}
+.pi-zone-7 .owl-carousel .owl-item img {}
 
 .pi-zone-7 .owl-carousel .owl-controls .owl-nav {
-    margin-top: -220px !important;
+    margin-top: -180px !important;
 }
 
 .pi-zone-5 .owl-carousel,
 .pi-zone-6 .owl-carousel {
-    height: 273px !important;
+    height: 233px !important;
 }
 
 .pi-zone-5 .owl-carousel .owl-stage,
 .pi-zone-6 .owl-carousel .owl-stage {
-    height: 270px !important;
+    height: 230px !important;
 }
 
 .pi-zone-5 .owl-carousel .owl-stage-outer,
 .pi-zone-6 .owl-carousel .owl-stage-outer {
-    height: 270px !important;
+    height: 230px !important;
 }
 
 .pi-zone-5 .owl-carousel .owl-item,
 .pi-zone-6 .owl-carousel .owl-item {
-    max-height: 270px !important;
+    max-height: 230px !important;
 }
 
 .pi-zone-5 .owl-carousel .owl-item img,
-.pi-zone-6 .owl-carousel .owl-item img {
-    max-height: 270px !important;
-}
+.pi-zone-6 .owl-carousel .owl-item img {}
 
 .pi-zone-5 .owl-carousel .owl-controls .owl-nav,
 .pi-zone-6 .owl-carousel .owl-controls .owl-nav {
     margin-top: -180px !important;
+}
+
+.owl-carousel .owl-item img {
+    height: 200px !important;
+}
+
+.owl-carousel .owl-item h3 {
+    font-size: 14px;
+    line-height: 25px;
+    height: 70px;
 }
 
 /* ribbon */
