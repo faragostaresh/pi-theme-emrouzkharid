@@ -53,4 +53,19 @@
             }
         })
     });
+    // Shwo hide form
+    $(document).ready(function(){
+        hidden = true;
+        $('#show-submit').click(function(){
+            if(hidden == false) {
+                $('#order-more-info').slideUp('slow');
+                $('#hide-submit').attr('id', 'show-submit').html('آخرین وضعیت مانده اقساط');
+                hidden = true;
+            } else {
+                $('#order-more-info').slideDown('slow');
+                $('#show-submit').attr('id', 'hide-submit').html('بستن پنجره');
+                hidden = false;
+            }
+        });
+    });
 })(jQuery)

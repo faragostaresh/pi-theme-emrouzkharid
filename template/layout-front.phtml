@@ -19,14 +19,14 @@ $this->js(array(
 ));
 
 // Load jQuery
-if ($module == 'system') {
+//if ($module == 'system') {
     $this->jQuery(array(
         'extension/owl.carousel.min.js',
         'extension/owl.carousel.css',
     ));
-} else {
-    $this->jquery();
-}
+//} else {
+//    $this->jQuery();
+//}
 
 // Load Bootstrap css/js and font-awesome
 $this->bootstrap(array(
@@ -103,27 +103,6 @@ $breadcrumbs = $this->breadcrumb(
     ))
 );
 
-// Show / Hide block
-$script = "
-(function($) {
-    // Shwo hide form
-    $(document).ready(function(){
-        hidden = true;
-        $('#show-submit').click(function(){
-            if(hidden == false) {
-                $('#order-more-info').slideUp('slow');
-                $('#hide-submit').attr('id', 'show-submit').html('آخرین وضعیت مانده اقساط');
-                hidden = true;
-            } else {
-                $('#order-more-info').slideDown('slow'); 
-                $('#show-submit').attr('id', 'hide-submit').html('بستن پنجره');
-                hidden = false;
-            }
-        });
-    });
-})(jQuery)
-";
-$this->footScript()->appendScript($script);
 ?>
 <!DOCTYPE HTML>
 <html lang="<?php echo $locale; ?>">
